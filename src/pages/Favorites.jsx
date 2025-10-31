@@ -8,6 +8,12 @@ export default function Favorites() {
     const favs = JSON.parse(localStorage.getItem("favorites")) || [];
     setFavorites(favs);
   }, []);
+   const removeFromFavorites = (id) => {
+    const updated = favorites.filter((movie) => movie.imdbID !== id);
+    setFavorites(updated);
+    localStorage.setItem("favorites", JSON.stringify(updated));
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white py-10 px-4">
@@ -31,6 +37,12 @@ export default function Favorites() {
                 className="transform hover:scale-105 transition-all duration-300"
               >
                 <MovieCard movie={movie} addToFavorites={() => {}} />
+              <button
+                onClick={() => removeFromFavorites(movie.imdbID)}
+                className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white text-xs px-2 py-1 rounded-md opacity-90 group-hover:opacity-100 transition"
+              >
+                ❌ Remove
+              </button>
               </div>
             ))}
           </div>
