@@ -11,7 +11,7 @@ It fetches user data from a public API and displays it in a responsive UI with s
 | Requirement                                                   | Status |
 | ------------------------------------------------------------- | ------ |
 | Use React.js functional components                            | ✅      |
-| Fetch users from `https://jsonplaceholder.typicode.com/users` | ✅      |
+| Fetch users from Omdb API | ✅      |
 | Display users in styled cards                                 | ✅      |
 | Search bar to filter users by name                            | ✅      |
 | Use Modern UI / Tailwind CSS for styling                      | ✅      |
